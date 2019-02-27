@@ -1,8 +1,26 @@
+/* things to remember
+Make sure to use the correct tree structure in the link when linking the style sheet
+use the google fonts page for free fonts. The fonts link has to be above the style sheet link but below the bootstrap link !important 
+
+Live editing in the browser, using the devtools and inspect!important. I just copy and past the changes from the devtools to the
+index file or the style file.
+
+<hr> is a line breaker, a divider in the page and is used in our .block-dividers class
+
+
+
+
+
+*/
+
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* font family form google fonts */
 }
 
-/* Containers */
+/*  Containers - Alert, Callout, Quotes and Features
+    Everything was in one container before, we have now split everything up inte different containers
+    this gives more flexibility with the design     */
 
 .container-wrapper {}
 
@@ -14,22 +32,23 @@ body {
 .alert-container {}
 
 .callout-container {
-    height: 100vh;
+    height: 100vh;     /*100 vertical height - the entire heigt of the browser window */
 
-    background: url('../images/whiskey-background.jpg') no-repeat center center fixed;
+    background: url('../images/whiskey-background.jpg') no-repeat center center fixed;     /* full width background copy and paste from the webpage*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
-    display: flex;
+    display: flex;         /* flexbox to center the text  */
     align-items: center;
     justify-content: center;
 
     position: relative;
 }
 
-.opaque-overlay {
+.opaque-overlay {    /* to take the edge of the background to make it smoother and make the text stand out a little more 
+                        create it in the dev tool and paste it in the style sheet */
     position: absolute;
     top: 0;
     left: 0;
@@ -117,7 +136,7 @@ body {
     background-color: transparent;
 }
 
-.jumbotron h1 {
+.jumbotron h1 {             /* here we had a specificity problem, h1 overwrote our inital class for the jumbotron header class */
     color: white;
     font-weight: bold;
     margin-bottom: 30px;
@@ -135,7 +154,9 @@ body {
     color: #d0d0d0;
 }
 
-/* Block dividers */
+/* Block dividers <hr>
+<hr> is a line breaker, a divider in the page
+*/
 
 .block-divider {
     width: 75px;
@@ -144,21 +165,21 @@ body {
     background-color: #444;
 }
 
-.block-divider--orange {
+.block-divider--orange {     /* modifier class */
     background-color: #f05f40;
 }
 
-.block-divider--white {
+.block-divider--white {     /* modifier class we use these so that we can change the color later without the head class .block-divider */
     background-color: white;
 }
 
-.block-divider--short {
+.block-divider--short {     /* modifier class */
     width: 35px;
 }
 
 /* Buttons */
 
-.btn--cta {
+.btn--cta {             /*cta - call to action. No rules for names but different ways */
     font-weight: bold;
     border-radius: 23px;
     width: 160px;
